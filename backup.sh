@@ -6,6 +6,9 @@ echo "Old databases are moved to bakmysqlold folder"
 Now=$(date +"%Y-%m-%d")
 File=bakmysql-$Now.sql
 mysqldump -uusername -ppassword dbname > $File
+
+# 导出数据库到file文件
+# 
 echo "Your database backup successfully completed"
 SevenDays=$(date -d -15day +"%Y-%m-%d")
 if [ -f /bak/bakmysqlold/bakmysql-$SevenDays.sql ]
